@@ -6324,4 +6324,5 @@ a.th {
 /* line 49, ../scss/_lamar.scss */
 .site-description {
   font-size: 1.125em;
+  text-indent: -999em;
 }
