@@ -1,0 +1,53 @@
+/* Text meant only for screen readers */
+/* line 2, ../scss/main.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* line 9, ../scss/main.scss */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/* Small menu */
+/* line 29, ../scss/main.scss */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 36, ../scss/main.scss */
+  .menu-toggle,
+  .navigation-main.toggled-on .nav-menu {
+    display: block;
+  }
+
+  /* line 40, ../scss/main.scss */
+  .navigation-main ul {
+    display: none;
+  }
+}
+/* line 45, ../scss/main.scss */
+.site-description {
+  font-size: 1.125em;
+}
