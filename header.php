@@ -27,13 +27,16 @@
 		/**
 		* http://foundation.zurb.com/docs/components/top-bar.html
 		*
-		* Make fixed: class="top-bar-container fixed"
-		* Contain to grid: class="top-bar-container contain-to-grid"
-		*
-		* Remove "Menu" to just show the menu icon
+		* Configure the top bar in the theme options.
 		*/
-		?>
-		<div class="top-bar-container">
+			$topbar_setup = of_get_option('topbar_setup', 'none');
+			$classes = 'top-bar-container';
+			if ($topbar_setup['one'] == 1)
+				$classes .= ' contain-to-grid';
+			if ($topbar_setup['two'] == 1)
+				$classes .= ' fixed';
+		 ?>
+		<div class="<?php echo $classes; ?>">
 			<nav id="site-navigation" class="top-bar navigation-main" role="navigation">
 				<ul class="title-area site-branding">
 					<li class="name">
