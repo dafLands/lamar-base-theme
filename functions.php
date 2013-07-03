@@ -131,7 +131,6 @@ function wp_lamar_scripts() {
 		wp_enqueue_script( 'foundation-index', get_template_directory_uri() . '/js/foundation/index.js', null, '4.0', true );
 
 
-
 		// _s Script
 		wp_enqueue_script( 'wp_lamar-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 		// wp_enqueue_script( 'wp_lamar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -189,6 +188,21 @@ echo "</script>";
 }
 
 add_action('wp_footer', 'foundation_comptability', 10);
+
+endif;
+
+/**
+ * Remove Class from Sticky Post
+ */
+
+if ( ! function_exists( 'foundation_remove_sticky' ) ) :
+
+function foundation_remove_sticky($classes) {
+  $classes = array_diff($classes, array("sticky"));
+  return $classes;
+}
+
+add_filter('post_class','foundation_remove_sticky');
 
 endif;
 
