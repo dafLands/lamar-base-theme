@@ -13,11 +13,16 @@ function optionsframework_option_name() {
 	$themename = get_option( 'stylesheet' );
 	$themename = preg_replace("/\W/", "_", strtolower($themename) );
 
+	// Site specific prefix for database
+	$current_site = get_current_site();
+	$site_prefix = 'g2c' . $current_site->id . '_';
+
 	$optionsframework_settings = get_option('optionsframework');
-	$optionsframework_settings['id'] = $themename;
+	$optionsframework_settings['id'] = $site_prefix;
 	update_option('optionsframework', $optionsframework_settings);
 
 	// echo $themename;
+	// echo $site_prefix;
 }
 
 /**
@@ -31,33 +36,52 @@ function optionsframework_options() {
 	// If using image radio buttons, define a directory path
 	// $imagepath =  get_template_directory_uri() . '/images/';
 
+	global $current_user;
+	get_currentuserinfo();
+
 	$options = array();
 
-	// Theme Options Section - Developer Settings
+	if ( $current_user->user_login === 'jgarner') {
+
+		// Theme Options Section - Developer Settings
+		$options[] = array(
+			'name' => __('Developer Settings', 'options_check'),
+			'type' => 'heading');
+
+		// Topbar Setup Array
+		$topbarsetup_array = array(
+			'one' => __('Contain To Grid', 'options_check'),
+			'two' => __('Fixed', 'options_check'),
+		);
+
+		// Topbar Setup Defaults
+		$topbarsetup_defaults = array(
+			'one' => '1'
+		);
+
+		// Topbar Options
+		$options[] = array(
+			'name' => __('Top Bar Setup', 'options_check'),
+			'desc' => __('Configure the foundation settings for the top bar.', 'options_check'),
+			'id' => 'topbar_setup',
+			'std' => $topbarsetup_defaults, // These items get checked by default
+			'type' => 'multicheck',
+			'options' => $topbarsetup_array
+		);
+	}
+
 	$options[] = array(
-		'name' => __('Developer Settings', 'options_check'),
-		'type' => 'heading');
-
-	// Topbar Setup Array
-	$topbarsetup_array = array(
-		'one' => __('Contain To Grid', 'options_check'),
-		'two' => __('Fixed', 'options_check'),
+		'name' => __('Branding Options', 'options_check'),
+		'type' => 'heading'
 	);
 
-	// Topbar Setup Defaults
-	$topbarsetup_defaults = array(
-		'one' => '1'
-	);
-
-	// Topbar Options
 	$options[] = array(
-		'name' => __('Top Bar Setup', 'options_check'),
-		'desc' => __('Configure the foundation settings for the top bar.', 'options_check'),
-		'id' => 'topbar_setup',
-		'std' => $topbarsetup_defaults, // These items get checked by default
-		'type' => 'multicheck',
-		'options' => $topbarsetup_array
+		'name' => __('Uploader Test', 'options_check'),
+		'desc' => __('This creates a full size uploader that previews the image.', 'options_check'),
+		'id' => 'logo_uploader',
+		'type' => 'upload'
 	);
+
 
 	return $options;
 }

@@ -6274,13 +6274,13 @@ a.th {
 
 /* =Lamar Global
 ----------------------------------------------- */
-/* line 5, ../scss/_lamar.scss */
+/* line 10, ../scss/_lamar.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
 
-/* line 12, ../scss/_lamar.scss */
+/* line 17, ../scss/_lamar.scss */
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
@@ -6303,26 +6303,34 @@ a.th {
   /* Above WP toolbar */
 }
 
-/* line 32, ../scss/_lamar.scss */
+/* line 37, ../scss/_lamar.scss */
 .menu-toggle {
   display: none;
   cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
-  /* line 39, ../scss/_lamar.scss */
+  /* line 44, ../scss/_lamar.scss */
   .menu-toggle,
   .navigation-main.toggled-on .nav-menu {
     display: block;
   }
 
-  /* line 43, ../scss/_lamar.scss */
+  /* line 48, ../scss/_lamar.scss */
   .navigation-main ul {
     display: none;
   }
 }
-/* line 49, ../scss/_lamar.scss */
+/* line 55, ../scss/_lamar.scss */
+header .name.logo h1.site-title {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* line 59, ../scss/_lamar.scss */
 .site-description {
-  font-size: 1.125em;
-  text-indent: -999em;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
 }

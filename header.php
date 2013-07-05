@@ -31,15 +31,23 @@
 		*/
 			$topbar_setup = of_get_option('topbar_setup', 'none');
 			$classes = 'top-bar-container';
-			if ($topbar_setup['one'] == 1)
+			if ( $topbar_setup['one'] == 1 )
 				$classes .= ' contain-to-grid';
-			if ($topbar_setup['two'] == 1)
+			if ( $topbar_setup['two'] == 1 )
 				$classes .= ' fixed';
 		 ?>
 		<div class="<?php echo $classes; ?>">
 			<nav id="site-navigation" class="top-bar navigation-main" role="navigation">
 				<ul class="title-area site-branding">
+					<!-- <li class="name"> -->
+				<?php
+					$logo_src = of_get_option( 'logo_uploader' );
+					if ( $logo_src != null ) : ?>
+					<li class="name logo">
+						<img src="<?php echo $logo_src; ?>" alt="">
+					<?php else: ?>
 					<li class="name">
+				<?php endif; ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</li>

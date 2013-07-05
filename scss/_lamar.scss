@@ -1,6 +1,11 @@
 /* =Lamar Global
 ----------------------------------------------- */
 
+// Import Compass Mixins
+@import "compass/css3",
+	"compass/utilities",
+	"compass/layout";
+
 // Text meant only for screen readers
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -46,9 +51,13 @@
 }
 
 // Site Branding
+header .name.logo {
+	h1.site-title {
+		@include hide-text(left);
+	}
+}
 .site-description {
-	font-size: 1.125em;
-	text-indent: -999em;
+	@include hide-text(left);
 }
 
 // Missing Nav menu
