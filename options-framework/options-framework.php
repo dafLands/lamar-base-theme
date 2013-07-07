@@ -28,9 +28,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /* Basic plugin definitions */
 
 define('OPTIONS_FRAMEWORK_VERSION', '1.5');
+
+/************************* BEGIN REQUIRED CHANGE TO PLUGIN ******************************/
+
 // define('OPTIONS_FRAMEWORK_URL', plugin_dir_url( __FILE__ ));
+
 // Change URL for use within in theme directory - original commented out above
 define('OPTIONS_FRAMEWORK_URL', get_template_directory_uri() . '/options-framework/');
+
+/************************* END REQUIRED CHANGE TO PLUGIN ******************************/
+
 
 load_plugin_textdomain( 'optionsframework', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 
