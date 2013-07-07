@@ -34,7 +34,7 @@ define('OPTIONS_FRAMEWORK_VERSION', '1.5');
 // define('OPTIONS_FRAMEWORK_URL', plugin_dir_url( __FILE__ ));
 
 // Change URL for use within in theme directory - original commented out above
-define('OPTIONS_FRAMEWORK_URL', get_template_directory_uri() . '/options-framework/');
+define('OPTIONS_FRAMEWORK_URL', get_template_directory_uri() . '/inc/options-framework/');
 
 /************************* END REQUIRED CHANGE TO PLUGIN ******************************/
 

@@ -51,7 +51,7 @@ function wp_lamar_setup() {
 	/**
 	 * Enable support for Post Formats
 	 */
-	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio' ) );
 
 	/**
 	 * Setup the WordPress core custom background feature.
@@ -163,5 +163,28 @@ require get_template_directory() . '/inc/lamar-breadcrumb-trail.php';
 
 // ** Lamar - Options Framework
 // ------------------------------------------------------------------------
-require get_template_directory() . '/options-framework/options-framework.php';
+require get_template_directory() . '/inc/options-framework/options-framework.php';
 // ------------------------------------------------------------------------
+
+
+// ** Lamar - Post Formats
+// ------------------------------------------------------------------------
+require get_template_directory() . '/inc/wp-post-formats/cf-post-formats.php';
+// ------------------------------------------------------------------------
+
+
+// ** Lamar - Custom Post Types
+// ------------------------------------------------------------------------
+require get_template_directory() . '/inc/base/base.php';
+// ------------------------------------------------------------------------
+
+
+// ** Lamar - Custom Meta Boxes
+// ------------------------------------------------------------------------
+function load_cmb() {
+  if (!is_admin()) {
+    return;
+  }
+  require get_template_directory() . '/inc/cmb/init.php';
+}
+add_action('init', 'load_cmb');
