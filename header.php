@@ -29,19 +29,22 @@
 		*
 		* Configure the top bar in the theme options.
 		*/
+		$classes = 'top-bar-container';
+		if ( function_exists( 'of_get_option' ) ) {
 			$topbar_setup = of_get_option('topbar_setup', 'none');
-			$classes = 'top-bar-container';
 			if ( $topbar_setup['one'] == 1 )
 				$classes .= ' contain-to-grid';
 			if ( $topbar_setup['two'] == 1 )
 				$classes .= ' fixed';
+
+			// Get the Logo upload src
+			$logo_src = of_get_option( 'logo_uploader' );
+		}
 		 ?>
 		<div class="<?php echo $classes; ?>">
 			<nav id="site-navigation" class="top-bar navigation-main" role="navigation">
 				<ul class="title-area site-branding">
-					<!-- <li class="name"> -->
 				<?php
-					$logo_src = of_get_option( 'logo_uploader' );
 					if ( $logo_src != null ) : ?>
 					<li class="name logo">
 						<img src="<?php echo $logo_src; ?>" alt="">
