@@ -182,9 +182,13 @@ require get_template_directory() . '/inc/base/base.php';
 // ** Lamar - Custom Meta Boxes
 // ------------------------------------------------------------------------
 function load_cmb() {
-  if (!is_admin()) {
+
+  if ( !is_admin() ) {
     return;
   }
-  require get_template_directory() . '/inc/cmb/init.php';
+
+  if ( ! class_exists( 'cmb_Meta_Box' ) )
+	  require get_template_directory() . '/inc/cmb/init.php';
 }
-add_action('init', 'load_cmb');
+
+add_action('init', 'load_cmb', 9999);

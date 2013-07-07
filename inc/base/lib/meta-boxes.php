@@ -15,7 +15,7 @@ function base_meta_boxes($meta_boxes) {
   $meta_boxes[] = array(
     'id'         => 'page_options',
     'title'      => 'Page Options',
-    'pages'      => array('page'),
+    'pages'      => array('base_rotator'), // Post type
     'context'    => 'normal',
     'priority'   => 'high',
     'show_names' => true,

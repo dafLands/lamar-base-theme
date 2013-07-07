@@ -41,7 +41,7 @@ function optionsframework_options() {
 
 	$options = array();
 
-	if ( $current_user->user_login === 'jgarner') {
+	if ( $current_user->user_login === 'jgarner' || $current_user->user_login === 'jasong' || $current_user->ID == 1 ) {
 
 		// Theme Options Section - Developer Settings
 		$options[] = array(
@@ -76,8 +76,8 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => __('Uploader Test', 'options_check'),
-		'desc' => __('This creates a full size uploader that previews the image.', 'options_check'),
+		'name' => __('Logo Uploader', 'options_check'),
+		'desc' => __('Upload your logo to be displayed in the header (XXXpx x XXXpx).', 'options_check'),
 		'id' => 'logo_uploader',
 		'type' => 'upload'
 	);
