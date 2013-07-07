@@ -159,3 +159,9 @@ require get_template_directory() . '/inc/lamar-breadcrumb-trail.php';
 // ------------------------------------------------------------------------
 // require get_template_directory() . '/inc/lamar-widget-nav-menu.php';
 // ------------------------------------------------------------------------
+
+
+// ** Lamar - Options Framework
+// ------------------------------------------------------------------------
+require get_template_directory() . '/options-framework/options-framework.php';
+// ------------------------------------------------------------------------
