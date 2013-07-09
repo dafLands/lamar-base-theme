@@ -53,11 +53,11 @@
 // Site Branding
 header .name.logo {
 	h1.site-title {
-		@include hide-text(left);
+		@include squish-text();
 	}
 }
 .site-description {
-	@include hide-text(left);
+	@include squish-text();
 }
 
 // Missing Nav menu
