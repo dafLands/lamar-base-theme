@@ -85,7 +85,7 @@ endif;
 
 // ** Lamar Styles and Scripts.
 // ------------------------------------------------------------------------
-require get_template_directory() . '/inc/lamar-styles-and-scripts.php';
+require get_template_directory() . '/inc/styles-and-scripts.php';
 // ------------------------------------------------------------------------
 
 
@@ -96,7 +96,7 @@ require get_template_directory() . '/inc/lamar-styles-and-scripts.php';
 
 // ** Custom Menus and Sidebars.
 // ------------------------------------------------------------------------
-require get_template_directory() . '/inc/lamar-menus-and-sidebars.php';
+require get_template_directory() . '/inc/menus-and-sidebars.php';
 // ------------------------------------------------------------------------
 
 
@@ -132,32 +132,32 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // ** Lamar - Theme wrapper functions
 // ------------------------------------------------------------------------
-require get_template_directory() . '/inc/lamar-wrapper.php';
+require get_template_directory() . '/inc/wrapper.php';
 // ------------------------------------------------------------------------
 
 
 // ** Lamar - Custom menu setup
 // ------------------------------------------------------------------------
-// require get_template_directory() . '/inc/lamar-menus.php';
+// require get_template_directory() . '/inc/menus.php';
 // ------------------------------------------------------------------------
 
 
 // ** Lamar - Custom menu setup for foundation
 // ** https://gist.github.com/awshout/3943026
 // ------------------------------------------------------------------------
-require get_template_directory() . '/inc/lamar-top-bar-walker.php';
+require get_template_directory() . '/inc/top-bar-walker.php';
 // ------------------------------------------------------------------------
 
 
 // ** Lamar - Breadcrumbs
 // ------------------------------------------------------------------------
-require get_template_directory() . '/inc/lamar-breadcrumb-trail.php';
+require get_template_directory() . '/inc/breadcrumb-trail.php';
 // ------------------------------------------------------------------------
 
 
 // ** Lamar - Custom Menu Widget
 // ------------------------------------------------------------------------
-// require get_template_directory() . '/inc/lamar-widget-nav-menu.php';
+// require get_template_directory() . '/inc/widget-nav-menu.php';
 // ------------------------------------------------------------------------
 
 
@@ -192,3 +192,20 @@ function load_cmb() {
 }
 
 add_action('init', 'load_cmb', 9999);
+
+// ** Lamar - Custom Loop Shortcode
+// ------------------------------------------------------------------------
+require get_template_directory() . '/inc/loop-shortcode.php';
+// ------------------------------------------------------------------------
+
+
+// ** Initialize Mobile_Detect Class and detect device type.
+// ------------------------------------------------------------------------
+require_once 'inc/mobile-detect.php';
+// ------------------------------------------------------------------------
+
+
+// ** Add mobile shortcodes to use with Mobile_Detect class.
+// ------------------------------------------------------------------------
+require get_template_directory() . '/inc/mobile-shortcodes.php';
+// ------------------------------------------------------------------------

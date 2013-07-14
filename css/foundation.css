@@ -6323,16 +6323,16 @@ a.th {
 }
 /* line 55, ../scss/_lamar.scss */
 header .name.logo h1.site-title {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
 }
 
 /* line 59, ../scss/_lamar.scss */
 .site-description {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
 }
 
 /* line 71, ../scss/_lamar.scss */
